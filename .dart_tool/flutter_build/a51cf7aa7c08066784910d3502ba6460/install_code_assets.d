@@ -1,0 +1,1 @@
+ C:\\Users\\marya\\Documents\\cooker\\.dart_tool\\flutter_build\\a51cf7aa7c08066784910d3502ba6460\\native_assets.json: 

@@ -1,0 +1,151 @@
+{
+   "checksum": "071055e201bef1e18473568724f936dd",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13383595065380010",
+            "date_last_used": "0",
+            "guid": "78a8d97f-f02d-4bbd-901a-76d5518474b9",
+            "id": "9",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "2212.13910",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://arxiv.org/pdf/2212.13910",
+            "visit_count": 1
+         }, {
+            "date_added": "13383595073713535",
+            "date_last_used": "0",
+            "guid": "18c16316-248c-4e1c-9d4a-9b00823631b4",
+            "id": "10",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "How Amazon’s Recommendation Engine Finds What You Need - Shiprocket",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.shiprocket.in/blog/amazon-recommendation/",
+            "visit_count": 1
+         }, {
+            "date_added": "13386171116075980",
+            "date_last_used": "0",
+            "guid": "a63714ac-68d2-447d-8e38-2f41ee98f5ae",
+            "id": "11",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "New tab",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "edge://newtab/",
+            "visit_count": 1
+         }, {
+            "date_added": "13386171126797850",
+            "date_last_used": "0",
+            "guid": "d7b99363-a792-40ac-b223-f636d3cf96ec",
+            "id": "12",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "today.mp4 - Google Drive",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://drive.google.com/file/d/1w2seTtiOefYZpdzPZcRqRw2DiRpkdvak/view",
+            "visit_count": 1
+         }, {
+            "date_added": "13388466757997589",
+            "date_last_used": "0",
+            "guid": "a813d0e0-c8a9-4be2-888f-a9cdb98a4e12",
+            "id": "13",
+            "name": "TechnoHacks Solutions – Let's Grow Together",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://technohacks.co.in/",
+            "visit_count": 1
+         }, {
+            "date_added": "13389193522953040",
+            "date_last_used": "0",
+            "guid": "f72c4f75-0958-49da-8c13-76f51a21c74a",
+            "id": "14",
+            "name": "Varun Mayya | NVIDIA just announced the smallest AI supercomputer called DGX SPARK | Instagram",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.instagram.com/p/DEh-T5TzkI1/",
+            "visit_count": 1
+         }, {
+            "date_added": "13389344435796250",
+            "date_last_used": "0",
+            "guid": "2057df98-0ea2-4f55-9322-8fc843081b69",
+            "id": "8",
+            "name": "Lenovo Support",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://support.lenovo.com/",
+            "visit_count": 0
+         }, {
+            "date_added": "13389344435796110",
+            "date_last_used": "0",
+            "guid": "5646b060-7ceb-49ae-b0f8-ed18774dabbb",
+            "id": "7",
+            "name": "Lenovo",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://www.lenovo.com/",
+            "visit_count": 0
+         }, {
+            "date_added": "13389344435795637",
+            "date_last_used": "0",
+            "guid": "ec9358e1-cbab-4393-8e8c-0d8e8dff6253",
+            "id": "6",
+            "name": "McAfee",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://www.mcafee.com/consumer/v/browserfav/lenovo.html",
+            "visit_count": 0
+         } ],
+         "date_added": "13389344435608715",
+         "date_last_used": "0",
+         "date_modified": "13389344435796250",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Favorites bar",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13389344435608718",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13389344435608720",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile favorites",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CkEKHgiIgQISCPKOY0KWAQAAKg4QABgBIAYoBjAAOABAABIAKhg2dGxIWXUweFVOZzMyTUVsaTlXcFZ3PT1IA6AGDBKtAQgOEqgBChwvcTJ0MTBFRWxvbFRYUHR6UkQrNjYrL2lqMDQ9EiRmNzJjNGY3NS0wOTU4LTQ5ZGEtOGMxMy03NmY1MWEyMWM3NGEYACACKAIw2Mqgk+QyOJmlpcvjMkCyr6CT5DJKHFpqdUF0L3RDZFZQb3RjYWNleHkzNi92V0NnQT1aHyId+UZNQVovUDgvQjF2Y2pjR0E2aUxiV1p4Z01jVT1lttEx4sI+AmAFEq0BCA0SqAEKHExYd2xaTU90TjJtcmsxM2dOUXFsRFZwdFl1OD0SJGE4MTNkMGUwLWM4YTktNGJlMi04ODhmLWE5Y2RiOThhNGUxMhgAIAAoADD/jt/w4DI4rZHf8OAyQK2R3/DgMkocWWFOYXZ3RllyYjBWcDZhaFk3b1Bsak9McVk4PVofIh3zTndRdkJuSy9kKzUxb1l2bytMeEMyOEZqcHBrPWUAAAAAwj4CYAUSrQEIDBKoAQocQW1Qa0pXMDZBOU9wTmZLSFlYZE1MczJyaU5nPRIkZDdiOTkzNjMtYTc5Mi00MGFjLWIyMjMtZjYzNmQzY2Y5NmVjGAAgACgAMM70jKrYMjjQ9oyq2DJA0PaMqtgyShx2c29maXg3aUEweGJOdGJpVXNKaVlIUlVMQjA9Wh8iHeYzRk1pcWJHamlwYlpQRDEzRVVTTzArVmtVNE09ZQAAAADCPgJgBRKsAQgJEqcBChxtaE9sVU1RZkpQS1FxeEkzN2tjT3Jyc3NhVzg9EiQ3OGE4ZDk3Zi1mMDJkLTRiYmQtOTAxYS03NmQ1NTE4NDc0YjkYACACKAIw1sqgk+QyOJLM3t3OMkCvr6CT5DJKHC82cG9mc1IzVWw3Yk9XRUh4b1ozREYxTm53bz1aHiIcNXhzR3JzSWFESFd5d3VlUE9SK2lRc1BwNi9zPWUoGbWywj4CYAUSrQEIChKoAQocRk44cjdzNTRJVVRnckpuWDVRQzdmdFBVSDRjPRIkMThjMTYzMTYtMjQ4Yy00ZTFjLTlkNGEtOWIwMDgyMzYzMWI0GAAgAigCMNfKoJPkMjjsit/dzjJAsa+gk+QyShxLaUZ2QUc3OHptK2xQdmxhSU5XdWc3K2tuSm89Wh8iHZozSm5Qb1ZRVG5jMlcwcU5kK25MRVRXbnMzM289ZeIduQfCPgJgBRKOAQgCEokBChxZY1NUb252RVNQd3FDczRMMmNyVmh2NjhMOTg9EiQ5ZmJlMjdmMC0wNThlLTU3MTUtYThjYi04YzM3NDI1MjQwMzQYACAAKAAwy9G8+oIyOPDYvPqCMkDw2Lz6gjJKHG9QVmtod0JSYlY2NUtDV1IyK0lPTkhXb091OD1aAGUAAAAAwj4CYAASrQEICxKoAQocZ0MybVgrVENVQWlhYlMvVC9hTmJxU2xJaTRJPRIkYTYzNzE0YWMtNjhkMi00NDdkLThlMzgtMmY0MWVlOThmNWFlGAAgACgAMLKgjKrYMjjcooyq2DJA3KKMqtgyShxGdXpOZmVON2FHOTFucmhWcXNQNDllK3Zla289Wh8iHc1qQ3NaNHllMFJUSXV1MEMxRkJTaitZYnR2UEk9ZVTVYD7CPgJgBRKOAQgBEokBChx5eEovNmZ2a2VjcjdrcDVFUXpCNHRXTHBkYkU9EiQ5NTk5NWRkNS1mOThjLTU4OWQtOTNjYy1iODRmMmUzODRhYjcYACAAKAAwytG8+oIyONLYvPqCMkDS2Lz6gjJKHGFSQ1dMZ2hGOWI1SW5xS0lEdnVKL2p2UWtGYz1aAGUAAAAAwj4CYAASjgEIAxKJAQocbmpnRHU4OGVDcnZYcDg2cEQ3ZkhHY3FGcDg4PRIkMGRlMzIwNzMtOWYwOC01Y2Q3LTg0ZjktYmE0YzgwNmE5MDgyGAAgACgAMNDRvPqCMjio2bz6gjJAqNm8+oIyShx5ek5CMDFjbjU0QTdjUlUwdVQrL1BnbVR0VW89WgBlAAAAAMI+AmAAMAA4AA==",
+   "version": 1
+}
