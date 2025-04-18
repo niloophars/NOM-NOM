@@ -104,8 +104,12 @@ class _SignupState extends State<Signup> {
            children: [
             Text("Already have an account")
             SizedBox(Widgeth: 10.0,),
-            Text("Login",style: AppWidget.boldTextFeildStyle(),)
-          ),
+            GestureDetector(
+              onTap:(){
+                  Navigator.push(context,MaterialPageRoute(builder:(context) =>LogIn));
+              }
+            Child: Text("Login",style: AppWidget.boldTextFeildStyle(),)
+          ),)
           ] )
         }
       ]
