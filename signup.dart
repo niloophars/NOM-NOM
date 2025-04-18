@@ -51,7 +51,7 @@ class _SignupState extends State<Signup> {
          borderRadius: BorderRadius.circular(20)),
     height: MediaQuery.of(context).size.height/1.8,
     child:Column(
-      crossAxisAllignment: CrossAxisAllignment.start
+      crossAxisAlignment: CrossAxisAlignment.start
       children: [
         SizedBox(height:20.0,),
         Text(
@@ -100,7 +100,7 @@ class _SignupState extends State<Signup> {
           ),
           SizedBox(height:10.0)
           Row(
-          mainAxisALLignment: mainAxisALLignment.center,
+          mainAxisALignment: mainAxisAlignment.center,
            children: [
             Text("Already have an account")
             SizedBox(Widgeth: 10.0,),
