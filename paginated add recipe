@@ -1,0 +1,314 @@
+import 'package:random_string/random_string.dart';
+
+import 'package:flutter/material.dart';
+import 'package:recipe/services/database.dart';
+import 'package:recipe/services/widget_support.dart';
+
+class AddRecipe extends StatefulWidget {
+  const AddRecipe({super.key});
+
+  @override
+  State<AddRecipe> createState() => _AddRecipeState();
+}
+
+class _AddRecipeState extends State<AddRecipe> {
+  PageController _pageController = PageController();
+  TextEditingController imageUrlController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController ingredientNameController = TextEditingController();
+  TextEditingController ingredientQuantityController = TextEditingController();
+  TextEditingController cookingInstructionsController = TextEditingController();
+  TextEditingController totalTimeController = TextEditingController();
+
+  // To store ingredients (name and quantity)
+  List<Map<String, String>> ingredientsList = [];
+
+  // To store cooking instructions
+  List<String> cookingInstructionsList = [];
+
+  // Function to add an ingredient to the list
+  void addIngredient(String name, String quantity) {
+    setState(() {
+      ingredientsList.add({"name": name, "quantity": quantity});
+      ingredientNameController.clear();
+      ingredientQuantityController.clear();
+    });
+  }
+
+  // Function to add a cooking instruction to the list
+  void addInstruction(String instruction) {
+    setState(() {
+      cookingInstructionsList.add(instruction);
+      cookingInstructionsController.clear();
+    });
+  }
+
+  // Function to handle saving the recipe
+  uploadItem() async {
+    if (imageUrlController.text.isNotEmpty &&
+        nameController.text.isNotEmpty &&
+        ingredientsList.isNotEmpty &&
+        cookingInstructionsList.isNotEmpty &&
+        totalTimeController.text.isNotEmpty) {
+      
+      String addId = randomAlphaNumeric(10);
+
+      // Recipe Map to store all data
+      Map<String, dynamic> addRecipe = {
+        "Name": nameController.text,
+        "ImageURL": imageUrlController.text,
+        "Ingredients": ingredientsList,  // Store list of ingredients
+        "CookingInstructions": cookingInstructionsList,  // Store list of instructions
+        "TotalTime": totalTimeController.text,
+      };
+
+      // Assuming DatabaseMethods().addRecipe method is defined to handle the recipe insertion
+      DatabaseMethods().addRecipe(addRecipe).then((value) {
+        nameController.clear();
+        ingredientsList.clear();
+        cookingInstructionsList.clear();
+        totalTimeController.clear();
+        imageUrlController.clear();
+      });
+    } else {
+      print("Please fill all fields.");
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: PageView(
+        controller: _pageController,
+        children: [
+          // Page 1: Recipe Name, Image URL, Total Time
+          _buildPage(1),
+          // Page 2: Ingredients List
+          _buildPage(2),
+          // Page 3: Cooking Instructions
+          _buildPage(3),
+          // Page 4: Save Page
+          _buildPage(4),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildPage(int pageNumber) {
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Add Recipe Title
+          Container(
+            margin: EdgeInsets.only(top: 40.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Add Recipe",
+                  style: TextStyle(
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 40.0), // Spacer to provide some space below the title
+
+          // Page-specific content based on page number
+          if (pageNumber == 1) _buildPage1(),
+          if (pageNumber == 2) _buildPage2(),
+          if (pageNumber == 3) _buildPage3(),
+          if (pageNumber == 4) _buildPage4(),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildPage1() {
+    return Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("Recipe Name", style: AppWidget.boldTextFieldStyle()),
+          SizedBox(height: 10.0),
+          _buildTextField(controller: nameController, hintText: "Enter Recipe Name"),
+          SizedBox(height: 20.0),
+          Text("Image URL", style: AppWidget.boldTextFieldStyle()),
+          SizedBox(height: 10.0),
+          _buildTextField(controller: imageUrlController, hintText: "Enter Image URL"),
+          SizedBox(height: 20.0),
+          Text("Total Time", style: AppWidget.boldTextFieldStyle()),
+          SizedBox(height: 10.0),
+          _buildTextField(controller: totalTimeController, hintText: "Enter Total Time"),
+          Spacer(),
+          GestureDetector(
+            onTap: () {
+              _pageController.nextPage(
+                duration: Duration(milliseconds: 300),
+                curve: Curves.easeInOut,
+              );
+            },
+            child: _buildNextButton("Next"),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildPage2() {
+    return Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("Ingredient Name", style: AppWidget.boldTextFieldStyle()),
+          SizedBox(height: 10.0),
+          _buildTextField(controller: ingredientNameController, hintText: "Enter Ingredient Name"),
+          SizedBox(height: 20.0),
+          Text("Ingredient Quantity", style: AppWidget.boldTextFieldStyle()),
+          SizedBox(height: 10.0),
+          _buildTextField(controller: ingredientQuantityController, hintText: "Enter Ingredient Quantity"),
+          SizedBox(height: 20.0),
+          ElevatedButton(
+            onPressed: () {
+              String name = ingredientNameController.text.trim();
+              String quantity = ingredientQuantityController.text.trim();
+              if (name.isNotEmpty && quantity.isNotEmpty) {
+                addIngredient(name, quantity);
+              } else {
+                print("Please enter both name and quantity.");
+              }
+            },
+            child: Text("Add Ingredient"),
+          ),
+          SizedBox(height: 20.0),
+          Text("Ingredients List:", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+          Expanded(  // Wrap ListView in Expanded to avoid overflow issues
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: ingredientsList.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text("${ingredientsList[index]['name']}"),
+                  subtitle: Text("Quantity: ${ingredientsList[index]['quantity']}"),
+                );
+              },
+            ),
+          ),
+          Spacer(),
+          GestureDetector(
+            onTap: () {
+              _pageController.nextPage(
+                duration: Duration(milliseconds: 300),
+                curve: Curves.easeInOut,
+              );
+            },
+            child: _buildNextButton("Next"),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildPage3() {
+    return Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("Cooking Instructions", style: AppWidget.boldTextFieldStyle()),
+          SizedBox(height: 10.0),
+          _buildTextField(controller: cookingInstructionsController, hintText: "Enter Instruction Line"),
+          SizedBox(height: 20.0),
+          ElevatedButton(
+            onPressed: () {
+              String instruction = cookingInstructionsController.text.trim();
+              if (instruction.isNotEmpty) {
+                addInstruction(instruction);
+              } else {
+                print("Please enter a cooking instruction.");
+              }
+            },
+            child: Text("Add Instruction"),
+          ),
+          SizedBox(height: 20.0),
+          Text("Instructions List:", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+          Expanded(  // Wrap ListView in Expanded to avoid overflow issues
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: cookingInstructionsList.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text("Step ${index + 1}: ${cookingInstructionsList[index]}"),
+                );
+              },
+            ),
+          ),
+          Spacer(),
+          GestureDetector(
+            onTap: () {
+              _pageController.nextPage(
+                duration: Duration(milliseconds: 300),
+                curve: Curves.easeInOut,
+              );
+            },
+            child: _buildNextButton("Next"),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildPage4() {
+    return Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Spacer(),
+          GestureDetector(
+            onTap: uploadItem,
+            child: _buildNextButton("Save Recipe"),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildTextField({required TextEditingController controller, required String hintText}) {
+    return Container(
+      padding: EdgeInsets.only(left: 10.0),
+      width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border.all(),
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      child: TextField(
+        controller: controller,
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          hintText: hintText,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildNextButton(String text) {
+    return Container(
+      padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      width: MediaQuery.of(context).size.width,
+      child: Center(
+        child: Text(
+          text,
+          style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
+}
