@@ -1,9 +1,11 @@
-import 'package:cooker/pages/bottomnavbar.dart';
-import 'package:cooker/pages/home.dart';
-
+import 'package:cooker/pages/onboarding.dart';
+import 'package:cooker/pages/login.dart';
+import 'package:cooker/pages/signup.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 

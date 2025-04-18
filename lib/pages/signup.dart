@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:cooker/pages/login.dart';
+import 'package:cooker/widget/widget_support.dart';
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
